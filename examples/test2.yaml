@@ -1,0 +1,6 @@
+## @opt hostname hostname to set
+hostname: test
+
+## @mand timezone timezone to set for the host
+timezone: UTC
+
