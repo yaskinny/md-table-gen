@@ -1,6 +1,12 @@
 ## @opt user user to run the command with
 user: yaser
 
+## @opt nickName user nick name
+nickName: this
+
+## @opt mail_addr user email address
+mail_addr: this @ that . com
+
 ## @section database
 ## @mand db_address database address
 db_address: 'localhost'
@@ -10,7 +16,21 @@ db_port: 3306
 ## @obj_mand db_creds object to set database credentials
 ## @obj_mand db_creds.user database username
 ## @obj_mand db_creds.password database password
+## @obj_mand db_creds.init_role database role to set at login
+## @obj_mand db_creds.login_database_name database to set for login
+## @obj_mand db_creds.thisThatOk this that ok
 ## @obj db_creds.tls_path path to client tls bundle
 db_creds:
   user: yaser
   password: '1234'
+  init_role: developer
+  login_database_name: test
+  thisThatOk: rrr
+  
+
+## @opt dbs list of databases
+dbs:
+- this
+- that
+- app
+- users

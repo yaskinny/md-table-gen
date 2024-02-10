@@ -18,7 +18,9 @@ func RenderValueFile(path string) (string, error) {
 	defer file.Close()
 	ns := bufio.NewScanner(file)
 	output := strings.Builder{}
-	if _, err := output.WriteString(fmt.Sprintf("### %v\n%v", filepath.Base(path), tableHeader)); err != nil {
+	fn := filepath.Base(path)
+	dn := utils.AppendDirName(path)
+	if _, err := output.WriteString(fmt.Sprintf("### %v\n%v", filepath.Join(dn, fn), tableHeader)); err != nil {
 		return "", err
 	}
 

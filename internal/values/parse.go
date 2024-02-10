@@ -6,31 +6,31 @@ import (
 
 const (
 	// @opt <opt> <desc>
-	optRe  = `^\s*##\s\@opt\s(?P<opt>\w{2,64})\s(?P<desc>.+)$`
+	optRe  = `^\s*##\s\@opt\s(?P<opt>(\w|_){2,64})\s(?P<desc>.+)$`
 	optTpl = "| $opt | `$desc` |\n"
 
 	// @mand <opt> <desc>
-	mandOptRe  = `^\s*##\s\@mand\s(?P<opt>\w{2,64})\s(?P<desc>.+)$`
+	mandOptRe  = `^\s*##\s\@mand\s(?P<opt>(\w|_){2,64})\s(?P<desc>.+)$`
 	mandOptTpl = "| **$opt** | `$desc` |\n"
 
 	// @obj <objectName> <desc>
-	objNameRe  = `^\s*##\s\@obj\s(?P<objName>\w{2,64})\s(?P<desc>.+)$`
+	objNameRe  = `^\s*##\s\@obj\s(?P<objName>(\w|_){2,64})\s(?P<desc>.+)$`
 	objNameTpl = "$objName $desc"
 
 	// @obj_mand <objectName> <desc>
-	mandObjNameRe  = `^\s*##\s\@obj_mand\s(?P<objName>\w{2,64})\s(?P<desc>.+)$`
+	mandObjNameRe  = `^\s*##\s\@obj_mand\s(?P<objName>(\w|_){2,64})\s(?P<desc>.+)$`
 	mandObjNameTpl = "$objName $desc"
 
 	// @obj_mand <objectName>.<objOpt> <desc>
-	mandObjOptRe  = `^\s*##\s\@obj_mand\s(?P<objName>\w{2,64})\.(?P<objOpt>\w{2,64})\s(?P<desc>.+)$`
+	mandObjOptRe  = `^\s*##\s\@obj_mand\s(?P<objName>(\w|_){2,64})\.(?P<objOpt>(\w|_){2,64})\s(?P<desc>.+)$`
 	mandObjOptTpl = "$objName $objOpt $desc"
 
 	// @obj <objectName>.<objOpt> <desc>
-	objRe  = `^\s*##\s\@obj\s(?P<objName>\w{2,64})\.(?P<objOpt>\w{2,64})\s(P<desc>.+)$`
+	objRe  = `^\s*##\s\@obj\s(?P<objName>(\w|_){2,64})\.(?P<objOpt>(\w|_){2,64})\s(P<desc>.+)$`
 	objTpl = "$objName $objOpt $desc"
 
 	// @section <secName>
-	sectionRe  = `^\s*##\s\@section\s(?P<secName>\w{2,64})$`
+	sectionRe  = `^\s*##\s\@section\s(?P<secName>(\w|_){2,64})$`
 	sectionTpl = "\n**$secName:**\n"
 
 	tableHeader = "| name | description |\n| --- | --- |\n"
